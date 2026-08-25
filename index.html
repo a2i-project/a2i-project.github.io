@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A2I — High-Integrity AI Control Planes for Swedish Datacenter Industry</title>
+<meta name="description" content="A2I is a Vinnova-funded project on verifiable integrity for compound AI systems running on shared datacenter infrastructure.">
+<style>
+  :root {
+    --ink: #14161a;
+    --body: #33383f;
+    --muted: #7b828c;
+    --rule: #e2e5ea;
+    --accent: #1f4ed8;
+    --mono: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Helvetica, Arial, sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    background: #ffffff;
+    color: var(--body);
+    font-family: var(--sans);
+    font-size: 16.5px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 46rem;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(31, 78, 216, 0.25); }
+  a:hover { border-bottom-color: var(--accent); }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+
+  /* Header */
+
+  header {
+    padding: 4.5rem 0 2.5rem;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .acronym {
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.22em;
+    color: var(--muted);
+    margin: 0 0 0.9rem;
+  }
+
+  h1 {
+    font-size: 2.05rem;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    font-weight: 600;
+    margin: 0 0 1.1rem;
+  }
+
+  .standfirst {
+    font-size: 1.1rem;
+    color: var(--body);
+    margin: 0 0 1.6rem;
+    max-width: 38rem;
+  }
+
+  .meta {
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    color: var(--muted);
+    line-height: 1.9;
+  }
+
+  /* Sections */
+
+  section { padding: 3.2rem 0 0; }
+  section:last-of-type { padding-bottom: 3.5rem; }
+
+  h2 {
+    font-size: 0.78rem;
+    font-family: var(--mono);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink);
+    font-weight: 600;
+    margin: 0 0 1.3rem;
+    padding-bottom: 0.7rem;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  h3 {
+    font-size: 1rem;
+    color: var(--ink);
+    font-weight: 600;
+    margin: 0 0 0.3rem;
+  }
+
+  p { margin: 0 0 1.05rem; }
+  p:last-child { margin-bottom: 0; }
+
+  .lede { color: var(--ink); }
+
+  /* Entry blocks: partners, team */
+
+  .entry { margin-bottom: 1.6rem; }
+  .entry:last-child { margin-bottom: 0; }
+  .entry p { margin: 0; }
+
+  .role {
+    font-family: var(--mono);
+    font-size: 0.76rem;
+    color: var(--muted);
+    letter-spacing: 0.03em;
+  }
+
+  code { font-family: var(--mono); font-size: 0.9em; }
+
+  ul.people { list-style: none; margin: 0.35rem 0 0; padding: 0; }
+  ul.people li { margin-bottom: 0.15rem; }
+  ul.people .aff { color: var(--muted); font-size: 0.9rem; }
+
+  /* Empty states */
+
+  .empty {
+    color: var(--muted);
+    font-size: 0.95rem;
+    font-style: italic;
+  }
+
+  /* Subscribe */
+
+  .subscribe {
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    padding: 1.4rem 1.5rem;
+  }
+  .subscribe h2 { border: none; padding: 0; margin-bottom: 0.7rem; }
+
+  footer {
+    border-top: 1px solid var(--rule);
+    padding: 1.8rem 0 3rem;
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    color: var(--muted);
+  }
+
+  @media (max-width: 560px) {
+    header { padding-top: 3rem; }
+    h1 { font-size: 1.6rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <p class="acronym">A2I</p>
+    <h1>High-Integrity AI Control Planes for Swedish Datacenter Industry</h1>
+    <p class="meta"><a href="https://www.kth.se/">KTH Royal Institute of Technology</a> · <a href="https://www.canarybit.eu/">CanaryBit AB</a> · <a href="https://www.bahnhof.se/">Bahnhof AB</a></p>
+  </header>
+</div>
+
+<div class="wrap">
+
+  <section id="about">
+    <h2>About the project</h2>
+    <p class="lede">Swedish industry is moving AI workloads onto shared datacenter infrastructure. A tenant running a compound AI system on that infrastructure cannot verify that what executes matches what was declared and approved.</p>
+    <p>Compound AI systems span datasets, base models, fine-tuning steps, embedding indexes, prompt templates and orchestration logic, assembled across organizations that do not trust each other. Traditional supply chain attestation assumes reproducible builds. Training is not reproducible, so recompute-and-compare has no purchase on a model checkpoint.</p>
+    <p>A2I builds an integrity layer for the datacenter AI control plane. The project delivers a formal model of what integrity means for these systems, cryptographic binding of artifacts to the environment and recipe that produced them, and verification techniques that test an artifact against its declared recipe when no proof came with it. Everything is released open source.</p>
+    <p>A2I is funded by <a href="https://www.vinnova.se/p/kontrollplaner-for-hogintegritets-ai-inom-den-svenska-datacenterindustrin">Vinnova</a>.</p>
+  </section>
+
+  <section id="subscribe">
+    <div class="subscribe">
+      <h2>Get project news</h2>
+      <p>Subscribe to the mailing list for releases, publications and event announcements. Low traffic, no more than a handful of messages per year.</p>
+      <p><a href="mailto:a2i-project@lists.kth.se?subject=Subscribe">Subscribe to the mailing list</a></p>
+    </div>
+  </section>
+
+  <section id="papers">
+    <h2>Papers &amp; theses</h2>
+    <p class="empty">Nothing published yet. The first outputs are due in 2027, and all publications will be open access.</p>
+  </section>
+
+  <section id="repositories">
+    <h2>Repositories</h2>
+    <p>All code is developed in the open at <a href="https://github.com/a2i-project">github.com/a2i-project</a>.</p>
+  </section>
+
+  <section id="posts">
+    <h2>Posts</h2>
+    <p class="empty">No posts yet. Technical write-ups will appear here as the work lands.</p>
+  </section>
+
+  <section id="team">
+    <h2>Team</h2>
+
+    <div class="entry">
+      <p class="role"><a href="https://www.kth.se/">KTH Royal Institute of Technology</a></p>
+      <ul class="people">
+        <li>Martin Monperrus <span class="aff">— Professor, project leader</span></li>
+        <li>Carmine Cesarano <span class="aff">— Postdoctoral researcher</span></li>
+        <li>Julien Malka <span class="aff">— Postdoctoral researcher</span></li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <p class="role"><a href="https://www.canarybit.eu/">CanaryBit AB</a></p>
+      <ul class="people">
+        <li>Nicolae Paladi <span class="aff">— CEO and co-founder</span></li>
+        <li>Pegah Nikbakht Bideh <span class="aff">— Senior R&amp;D engineer</span></li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <p class="role"><a href="https://www.bahnhof.se/">Bahnhof AB</a></p>
+      <ul class="people">
+        <li>Alicia Holmqvist</li>
+        <li>Philip Göransson</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="events">
+    <h2>Events &amp; talks</h2>
+    <p class="empty">Nothing scheduled yet. Talks and programme events will be listed here.</p>
+  </section>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    A2I · Vinnova dnr 2026-01033 · Content licensed CC BY 4.0, code Apache-2.0
+  </div>
+</footer>
+
+</body>
+</html>
